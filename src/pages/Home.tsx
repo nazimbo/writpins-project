@@ -113,8 +113,8 @@ import {
   IonButton,
 } from "@ionic/react";
 import "./Home.css";
-import PinListItem from "../components/PinListItem"; // Importez PinListItem
-import pins from "../data/pins"; // Importez les épingles depuis le fichier pins.ts
+import PinListItem from "../components/PinListItem"; // Import de PinListItem
+import pins from "../data/pins"; // Import des épingles depuis le fichier pins.ts
 
 const Home: React.FC = () => {
   const [newPin, setNewPin] = useState({
