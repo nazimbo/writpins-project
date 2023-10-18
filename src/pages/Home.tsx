@@ -60,41 +60,6 @@
 // export default Home;
 
 // ---------------------------------------
-// import PinListItem from "../components/PinListItem"; // Importez PinListItem
-// import {
-//   IonContent,
-//   IonHeader,
-//   IonList,
-//   IonPage,
-//   IonTitle,
-//   IonToolbar,
-// } from "@ionic/react";
-// import "./Home.css";
-// import pins from "../data/pins"; // Importez les épingles depuis le fichier pins.ts
-
-// const Home: React.FC = () => {
-//   return (
-//     <IonPage id="home-page">
-//       <IonHeader>
-//         <IonToolbar>
-//           <IonTitle>My Pins</IonTitle>
-//         </IonToolbar>
-//       </IonHeader>
-//       <IonContent fullscreen>
-//         <IonList>
-//           {pins.map((pin) => (
-//             <PinListItem key={pin.id} pin={pin} />
-//           ))}{" "}
-//           {/* Utilisez PinListItem pour afficher les épingles */}
-//         </IonList>
-//       </IonContent>
-//     </IonPage>
-//   );
-// };
-
-// export default Home;
-
-// ---------------------------------------
 import React, { useState } from "react";
 import {
   IonContent,
@@ -145,7 +110,7 @@ const Home: React.FC = () => {
     <IonPage id="home-page">
       <IonHeader>
         <IonToolbar>
-          <IonTitle>My Pins</IonTitle>
+          <IonTitle>Mes épingles</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -158,11 +123,11 @@ const Home: React.FC = () => {
         {/* Formulaire pour créer une nouvelle épingle */}
         <IonCard>
           <IonCardHeader>
-            <IonCardTitle>Create a New Pin</IonCardTitle>
+            <IonCardTitle>Créer une nouvelle épingle</IonCardTitle>
           </IonCardHeader>
           <IonCardContent>
             <IonItem>
-              <IonLabel position="floating">Title</IonLabel>
+              <IonLabel position="floating">Titre</IonLabel>
               <IonInput
                 name="title"
                 value={newPin.title}
@@ -170,7 +135,7 @@ const Home: React.FC = () => {
               ></IonInput>
             </IonItem>
             <IonItem>
-              <IonLabel position="floating">Text</IonLabel>
+              <IonLabel position="floating">Texte</IonLabel>
               <IonInput
                 name="text"
                 value={newPin.text}
@@ -194,7 +159,7 @@ const Home: React.FC = () => {
               ></IonInput>
             </IonItem>
             <IonButton expand="full" onClick={handleCreatePin}>
-              Create Pin
+              Créer l'épingle
             </IonButton>
           </IonCardContent>
         </IonCard>

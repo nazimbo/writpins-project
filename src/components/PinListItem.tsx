@@ -1,7 +1,6 @@
-// src/components/PinListItem.tsx
-
 import React from "react";
 import { IonItem, IonLabel } from "@ionic/react";
+import "./PinListItem.css";
 
 interface PinListItemProps {
   pin: {
@@ -15,11 +14,11 @@ interface PinListItemProps {
 }
 
 const PinListItem: React.FC<PinListItemProps> = ({ pin }) => (
-  <IonItem>
+  <IonItem className="pin-list-item">
     <IonLabel>
       <h2>{pin.title}</h2>
       <p>{pin.text}</p>
-      <p>Source: {pin.source}</p>
+      <p className="source">Source: {pin.source}</p>
     </IonLabel>
   </IonItem>
 );

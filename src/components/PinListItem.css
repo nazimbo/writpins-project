@@ -1,0 +1,29 @@
+/* PinListItem.css */
+
+/* Style pour le conteneur de l'élément de liste */
+ion-item.pin-list-item {
+  --inner-padding-end: 16px; /* Ajuster le padding à votre préférence */
+}
+
+/* Style pour le titre */
+ion-item h2 {
+  font-size: 20px; /* Ajuster la taille de la police à votre préférence */
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Style pour le texte de l'épingle */
+ion-item p {
+  font-size: 14px; /* Ajuster la taille de la police à votre préférence */
+}
+
+/* Style pour la source de l'épingle */
+ion-item p.source {
+  font-style: italic;
+}
+
+/* Style pour les tags de l'épingle */
+ion-item p.tags {
+  font-weight: bold;
+  color: #007aff; /* Couleur personnalisée pour les tags */
+}
