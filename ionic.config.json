@@ -1,0 +1,7 @@
+{
+  "name": "writpins-project",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
