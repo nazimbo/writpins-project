@@ -1,66 +1,4 @@
-// import MessageListItem from '../components/MessageListItem';
-// import { useState } from 'react';
-// import { Message, getMessages } from '../data/messages';
-// import {
-//   IonContent,
-//   IonHeader,
-//   IonList,
-//   IonPage,
-//   IonRefresher,
-//   IonRefresherContent,
-//   IonTitle,
-//   IonToolbar,
-//   useIonViewWillEnter
-// } from '@ionic/react';
-// import './Home.css';
-
-// const Home: React.FC = () => {
-
-//   const [messages, setMessages] = useState<Message[]>([]);
-
-//   useIonViewWillEnter(() => {
-//     const msgs = getMessages();
-//     setMessages(msgs);
-//   });
-
-//   const refresh = (e: CustomEvent) => {
-//     setTimeout(() => {
-//       e.detail.complete();
-//     }, 3000);
-//   };
-
-//   return (
-//     <IonPage id="home-page">
-//       <IonHeader>
-//         <IonToolbar>
-//           <IonTitle>Inbox</IonTitle>
-//         </IonToolbar>
-//       </IonHeader>
-//       <IonContent fullscreen>
-//         <IonRefresher slot="fixed" onIonRefresh={refresh}>
-//           <IonRefresherContent></IonRefresherContent>
-//         </IonRefresher>
-
-//         <IonHeader collapse="condense">
-//           <IonToolbar>
-//             <IonTitle size="large">
-//               Inbox
-//             </IonTitle>
-//           </IonToolbar>
-//         </IonHeader>
-
-//         <IonList>
-//           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
-//         </IonList>
-//       </IonContent>
-//     </IonPage>
-//   );
-// };
-
-// export default Home;
-
-// ---------------------------------------
-import React, { useState } from "react";
+import React from "react";
 import {
   IonContent,
   IonHeader,
@@ -78,11 +16,12 @@ import {
   IonButton,
 } from "@ionic/react";
 import "./Home.css";
-import PinListItem from "../components/PinListItem"; // Import de PinListItem
-import pins from "../data/pins"; // Import des épingles depuis le fichier pins.ts
+import PinListItem from "../components/PinListItem";
+import pins from "../data/pins";
+import { useStoredState } from "../hooks";
 
 const Home: React.FC = () => {
-  const [newPin, setNewPin] = useState({
+  const [newPin, setNewPin] = useStoredState("newPin", {
     title: "",
     text: "",
     source: "",
@@ -95,14 +34,10 @@ const Home: React.FC = () => {
   };
 
   const handleCreatePin = () => {
-    // Créez une nouvelle épingle avec l'état du formulaire et ajoutez-la à la liste
     const id = pins.length + 1;
     const date = new Date().toISOString().slice(0, 10);
     const newPinData = { id, date, ...newPin };
-
-    pins.push(newPinData); // Ajoutez la nouvelle épingle aux épingles existantes
-
-    // Réinitialisez le formulaire
+    pins.push(newPinData);
     setNewPin({ title: "", text: "", source: "", tags: "" });
   };
 
@@ -119,8 +54,6 @@ const Home: React.FC = () => {
             <PinListItem key={pin.id} pin={pin} />
           ))}
         </IonList>
-
-        {/* Formulaire pour créer une nouvelle épingle */}
         <IonCard>
           <IonCardHeader>
             <IonCardTitle>Créer une nouvelle épingle</IonCardTitle>
