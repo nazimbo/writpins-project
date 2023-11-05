@@ -6,3 +6,7 @@ IonReactRouter est optimisé pour les applications Ionic, offrant une intégrati
 La principale différence réside dans le contexte d'utilisation et l'intégration avec l'écosystème Ionic.
 
 
+Itération 2 : Authentification
+La création d'un contexte React pour la gestion de l'état d'authentification dans une application a été abordée. Cela implique la définition d'une interface Auth et la création d'un AuthContext avec React.createContext.
+Nous avons créé un hook personnalisé useAuth qui utilise le hook useState pour gérer l'état Auth. Ce hook renvoie l'état Auth actuel et une fonction pour le mettre à jour.
+Nous avons utilisé le hook useAuth dans la page de connexion pour gérer l'état Auth. Nous avons créé des variables d'état pour les entrées de nom d'utilisateur et de mot de passe, ainsi qu'une fonction pour gérer l'événement de clic sur le bouton de connexion. Pour l'instant, cette fonction se contente de mettre loggedIn à true, mais elle peut être remplacée par une véritable logique de connexion.
